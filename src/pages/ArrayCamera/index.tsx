@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "antd";
 import * as THREE from "three";
 import useWebGLRenderer from "@/hooks/useWebGLRenderer";
-// import usePerspectiveCamera from "@/hooks/usePerspectiveCamera";
 import useDirectionalLight from "@/hooks/useDirectionalLight";
 import useAmbientLight from "@/hooks/useAmbientLight";
 
@@ -14,7 +13,6 @@ const HEIGHT = (window.innerHeight / AMOUNT) * window.devicePixelRatio;
 function Home() {
   const canvasRef = useRef<HTMLDivElement>();
   const renderer = useWebGLRenderer();
-  // const camera = usePerspectiveCamera();
   const ambientLight = useAmbientLight();
   const directionLight = useDirectionalLight();
   const [counter, setCounter] = useState(0);

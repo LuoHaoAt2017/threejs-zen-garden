@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "@/pages/Home";
+import ArrayCamera from "@/pages/ArrayCamera";
 import About from "@/pages/About";
 
 const basename = import.meta.env.VITE_BASE_PATH;
 
 const routes = [
   {
-    path: "home",
-    element: <Home />,
+    path: "arrayCamera",
+    element: <ArrayCamera />,
   },
   {
     path: "about",
