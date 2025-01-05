@@ -1,25 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { Button } from "antd";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import useWebGLRenderer from "@/hooks/useWebGLRenderer";
 import useDirectionalLight from "@/hooks/useDirectionalLight";
 import useAmbientLight from "@/hooks/useAmbientLight";
 
-const AMOUNT = 6;
+const AMOUNT = 4;
 const ASPECT_RATIO = window.innerWidth / window.innerHeight;
 const WIDTH = (window.innerWidth / AMOUNT) * window.devicePixelRatio;
 const HEIGHT = (window.innerHeight / AMOUNT) * window.devicePixelRatio;
 
-function Home() {
+function ArrayCamera() {
   const canvasRef = useRef<HTMLDivElement>();
   const renderer = useWebGLRenderer();
   const ambientLight = useAmbientLight();
   const directionLight = useDirectionalLight();
-  const [counter, setCounter] = useState(0);
-
-  const handleClick = () => {
-    setCounter((preCounter) => preCounter + 1);
-  };
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -79,11 +73,7 @@ function Home() {
     }
   }, [renderer, directionLight, ambientLight]);
 
-  return (
-    <div ref={canvasRef}>
-      <Button onClick={handleClick}>{counter}</Button>
-    </div>
-  );
+  return <div ref={canvasRef}></div>;
 }
 
-export default Home;
+export default ArrayCamera;
