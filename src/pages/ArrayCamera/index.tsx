@@ -9,6 +9,10 @@ const ASPECT_RATIO = window.innerWidth / window.innerHeight;
 const WIDTH = (window.innerWidth / AMOUNT) * window.devicePixelRatio;
 const HEIGHT = (window.innerHeight / AMOUNT) * window.devicePixelRatio;
 
+/**
+ * 视口的尺寸以及背景的尺寸务必远大于视口中显示的物体
+ * 恰当地调整相机的视角和相机距离物体的远近来显示物体
+ */
 function ArrayCamera() {
   const canvasRef = useRef<HTMLDivElement>();
   const renderer = useWebGLRenderer();
